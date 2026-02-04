@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Fredoka+One&family=Righteous&family=Bangers&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  color-scheme: light dark;
+  font-family: 'Fredoka One', cursive;
+}
+
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  font-family: 'Fredoka One', cursive;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Righteous', cursive;
+  font-weight: 900;
+  letter-spacing: 0.05em;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
