@@ -7,7 +7,6 @@ import { Product } from "@/types"
 
 interface ProductCardProps {
   name: string
-  price: number
   category: Product["category"]
   image: string
   onClick: () => void
@@ -15,7 +14,6 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   name,
-  price,
   category,
   image,
   onClick,

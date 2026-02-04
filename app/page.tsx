@@ -76,12 +76,10 @@ export default function Home() {
   const filteredAndSortedProducts = useMemo(() => {
     let products = [...sampleProducts]
 
-    // Filter by category
     if (filterCategory !== "all") {
       products = products.filter((p) => p.category === filterCategory)
     }
 
-    // Sort products
     if (sortBy === "price-asc") {
       products.sort((a, b) => a.price - b.price)
     } else if (sortBy === "price-desc") {
@@ -92,14 +90,15 @@ export default function Home() {
   }, [filterCategory, sortBy])
 
   return (
-    <div className="min-h-screen bg-cover bg-fixed py-12 px-4 sm:px-6 lg:px-8" style={{ backgroundImage: "url('/bg.jpg')" }}>
+    <div
+      className="min-h-screen bg-cover bg-fixed py-12 px-4 sm:px-6 lg:px-8"
+      style={{ backgroundImage: "url('/bg.jpg')" }}
+    >
       <div className="max-w-7xl mx-auto">
-        {/* Header */}
         <h1 className="text-6xl font-black text-center mb-12 text-yellow-300 drop-shadow-2xl">
           ✨ Product Catalog ✨
         </h1>
 
-        {/* Filters and Sorting */}
         <div className="bg-blue-900/60 backdrop-blur-md rounded-2xl shadow-2xl p-6 mb-8 border-4 border-cyan-400">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <SelectControl
@@ -121,7 +120,6 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Products Grid */}
         {filteredAndSortedProducts.length > 0 ? (
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {filteredAndSortedProducts.map((product) => (
@@ -143,7 +141,6 @@ export default function Home() {
           </div>
         )}
 
-        {/* Product Detail Modal */}
         {selectedProduct && (
           <ProductDetailModal
             product={selectedProduct}
@@ -155,3 +152,4 @@ export default function Home() {
     </div>
   )
 }
+
