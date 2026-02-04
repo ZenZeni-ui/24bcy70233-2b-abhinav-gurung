@@ -7,6 +7,7 @@ import { Product } from "@/types"
 
 interface ProductCardProps {
   name: string
+  price: number
   category: Product["category"]
   image: string
   onClick: () => void
@@ -14,6 +15,7 @@ interface ProductCardProps {
 
 export const ProductCard: React.FC<ProductCardProps> = ({
   name,
+  price,
   category,
   image,
   onClick,
@@ -30,11 +32,13 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           className="w-full h-full object-cover hover:scale-110 transition-transform duration-300"
         />
       </div>
+
       <CardHeader>
         <CardTitle className="text-4xl text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-pink-400 to-yellow-300">
           {name}
         </CardTitle>
       </CardHeader>
+
       <CardContent className="space-y-4">
         <Badge
           variant={
@@ -48,6 +52,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
         >
           💫 {category}
         </Badge>
+
+        <p className="text-2xl font-extrabold text-green-400 drop-shadow-[0_0_6px_rgba(34,197,94,0.8)]">
+          ₹{price}
+        </p>
+
         <p className="text-yellow-300 hover:text-cyan-300 font-bold text-sm">
           👆 Click to see details →
         </p>
